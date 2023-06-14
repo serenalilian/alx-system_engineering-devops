@@ -22,25 +22,25 @@
 
 * What are special parameters
 
-*What is the special parameter $??
+* What is the special parameter $??
 
-*What is expansion and how to use them
+* What is expansion and how to use them
 
-*What is the difference between single and double quotes and how to use them properly
+* What is the difference between single and double quotes and how to use them properly
 
-*How to do command substitution with $() and backticks
+* How to do command substitution with $() and backticks
 
-*How to perform arithmetic operations with the shell
+* How to perform arithmetic operations with the shell
 
-*The alias Command
+* The alias Command
 
-*How to create an alias
+* How to create an alias
 
-*How to list aliases
+* How to list aliases
 
-*How to temporarily disable an alias
+* How to temporarily disable an alias
 
-*Other help pages
+* Other help pages
 
-*How to execute commands from a file in the current shell
+* How to execute commands from a file in the current shell
 
