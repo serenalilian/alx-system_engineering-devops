@@ -1,0 +1,47 @@
+<https://imgur.com/RHqHa6f>
+
+# ANSWERS
+1. A server is a computer system that stores and delivers web content to users over the internet.
+In this case, we have one server that will handle all the components of the web infrastructure.
+
+2. Role of a Domain 
+  The domain name (foobar.com) is the unique address used to identify the website.
+The www record is a DNS (Domain Name System) record that points the domain name to the server's IP address (8.8.8.8).
+
+3. DNS record
+ The www record in www.foobar.com is a subdomain that specifies the server to handle requests for the website.
+It is typically associated with the web server component of the infrastructure.
+
+4. Web Server
+ The web server (Nginx) is responsible for receiving and processing HTTP requests from users.
+It serves static files and routes dynamic requests to the application server.
+
+5. Application Server
+ The application server handles dynamic content generation and business logic of the website.
+It receives requests from the web server, processes them, and generates responses to be sent back to the user.
+
+6. Aplication Files
+  The application files contain the code base of the website.
+They include HTML, CSS, JavaScript, and any server-side code required for the website's functionality
+
+7. Database My SQL
+  The database stores and manages the website's data.
+MySQL is a popular relational database management system used in this infrastructure.
+
+8.USer
+  The server communicates with the user's computer over the internet using the HTTP protocol.
+The user's computer sends an HTTP request to the server, and the server responds with an HTTP response containing the requested content.
+
+## Issues with this Infrastructure:
+
+1. Single Point of Failure (SPOF):
+Since there is only one server, if it fails, the entire website becomes inaccessible.
+To mitigate this, redundancy measures like adding backup servers or implementing load balancing can be considered.
+
+2. Downtime during Maintenance:
+When deploying new code, the web server needs to be restarted, resulting in downtime.
+To minimize downtime, strategies like rolling deployments or using multiple servers can be implemented. 
+
+3. Limited Scalability:
+ With only one server, the infrastructure cannot handle a large influx of incoming traffic.
+Scaling options like adding more servers, load balancers, or utilizing cloud-based infrastructure can address this limitation
