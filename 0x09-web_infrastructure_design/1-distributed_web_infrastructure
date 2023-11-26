@@ -1,0 +1,58 @@
+<https://imgur.com/a/nbNwJOo>
+
+Answers
+To design a three-server web infrastructure for hosting the website www.foobar.com, we can follow these specifications:
+
+1. User Access:
+   - When a user wants to access the website, they enter the URL www.foobar.com in their web browser.
+
+2. Server:
+   - We will have three servers that will handle different components of the web infrastructure.
+   - The servers will be named Server1, Server2, and Server3.
+
+3. Domain Name:
+   - The domain name (foobar.com) is the unique address used to identify the website.
+   - The www record is a DNS (Domain Name System) record that points the domain name to the load balancer's IP address.
+
+4. DNS Record:
+   - The www record in www.foobar.com is a subdomain that specifies the load balancer to handle requests for the website.
+   - It is typically associated with the load balancer component of the infrastructure.
+
+5. Load Balancer (HAproxy):
+   - The load balancer distributes incoming requests across multiple servers to improve performance and ensure high availability.
+   - It is configured with a round-robin distribution algorithm, which works by rotating requests among the available servers in a circular order.
+
+6. Web Server (Nginx):
+   - The web server (Nginx) is responsible for receiving and processing HTTP requests from users.
+   - It serves static files and routes dynamic requests to the application server.
+
+7. Application Server:
+   - The application server handles dynamic content generation and business logic of the website.
+   - It receives requests from the web server, processes them, and generates responses to be sent back to the user.
+
+8. Application Files:
+   - The application files contain the code base of the website.
+   - They include HTML, CSS, JavaScript, and any server-side code required for the website's functionality.
+
+9. Database (MySQL):
+   - The database stores and manages the website's data.
+   - We will configure a Primary-Replica (Master-Slave) cluster for high availability and data redundancy.
+
+10. Primary-Replica Cluster:
+    - The Primary-Replica cluster consists of one Primary node and one or more Replica nodes.
+    - The Primary node handles all write operations and replicates data changes to the Replica nodes.
+    - The Replica nodes handle read operations and can take over as the Primary node in case of a failover event.
+
+Issues with this Infrastructure:
+
+1. Single Point of Failure (SPOF):
+   - The load balancer is a potential SPOF since it handles all incoming requests.
+   - To mitigate this, redundancy measures like adding backup load balancers or implementing DNS round-robin can be considered.
+
+2. Security Issues:
+   - There is no firewall or HTTPS encryption in this infrastructure, which can leave it vulnerable to attacks.
+   - Adding a firewall and enabling HTTPS can improve security.
+
+3. No Monitoring:
+   - There is no monitoring system in place to track server performance or detect issues.
+   - Adding a monitoring system can help identify and resolve  issues before they cause downtime.
