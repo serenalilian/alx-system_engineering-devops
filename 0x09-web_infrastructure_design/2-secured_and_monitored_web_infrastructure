@@ -1,0 +1,60 @@
+<https://imgur.com/a/I69j4cb>
+Answer
+
+1. User Access:
+   - When a user wants to access the website, they enter the URL www.foobar.com in their web browser.
+
+2. Server:
+   - We will have three servers that will handle different components of the web infrastructure.
+   - The servers will be named Server1, Server2, and Server3.
+
+3. Domain Name:
+   - The domain name (foobar.com) is the unique address used to identify the website.
+   - The www record is a DNS (Domain Name System) record that points the domain name to the load balancer's IP address.
+
+4. DNS Record:
+   - The www record in www.foobar.com is a subdomain that specifies the load balancer to handle requests for the website.
+   - It is typically associated with the load balancer component of the infrastructure.
+
+5. Load Balancer (HAproxy):
+   - The load balancer distributes incoming requests across multiple servers to improve performance and ensure high availability.
+   - It is configured to terminate SSL at the load balancer level.
+
+6. SSL Certificate:
+   - We will add an SSL certificate to serve www.foobar.com over HTTPS.
+   - This is to ensure that all traffic between the user's web browser and the web server is encrypted and secure.
+
+7. Firewalls:
+   - We will add three firewalls to secure the network infrastructure and protect against unauthorized access.
+   - One firewall will be placed in front of the load balancer, and two firewalls will be placed in front of the application servers.
+
+8. Web Server (Nginx):
+   - The web server (Nginx) is responsible for receiving and processing HTTP requests from users.
+   - It serves static files and routes dynamic requests to the application server.
+
+9. Application Server:
+   - The application server handles dynamic content generation and business logic of the website.
+   - It receives requests from the web server, processes them, and generates responses to be sent back to the user.
+
+10. Application Files:
+    - The application files contain the code base of the website.
+    - They include HTML, CSS, JavaScript, and any server-side code required for the website's functionality.
+
+11. Database (MySQL):
+    - The database stores and manages the website's data.
+    - We will configure a Primary-Replica (Master-Slave) cluster for high availability and data redundancy.
+    - Each server will have a MySQL instance capable of accepting writes to avoid SPOF.
+
+12. Monitoring:
+    - We will use monitoring clients (data collectors for Sumologic or other monitoring services) to monitor the web infrastructure.
+    - The monitoring tool will collect data on server performance, uptime, and other key metrics.
+
+13. Monitoring QPS:
+    - To monitor web server QPS, we can use tools like Nginx Amplify or Prometheus.
+    - These tools collect data on request rates, response times, and other performance metrics.
+
+Issues with this Infrastructure:
+
+1. Terminating SSL at the load balancer level can be an issue because it can create a bottleneck and reduce performance.
+2. Having only one MySQL server capable of accepting writes can be an issue because it creates a single point of failure.
+3. Having servers with all the same components (database, web server, and application server) can be a problem because it increases the risk of a complete system failure if one component fails.
