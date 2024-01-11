@@ -33,7 +33,7 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-#--devnderitu.tech-params-begin--
+#--yourserena.tech-params-begin--
 
 
 frontend yourserena.tech-http-frontend
@@ -48,6 +48,6 @@ frontend yourserena.tech-https-frontend
 
 backend serena-backend
         balance roundrobin
-        server 126641-web-01 54.234.78.185 check
-        server 126641-web-02 54.173.248.243 check
+        server 126641-web-01 54.234.78.185:80 check
+        server 126641-web-02 54.173.248.243:80check
 #--yourserena.tech-params-end--
